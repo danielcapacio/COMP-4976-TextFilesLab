@@ -1,8 +1,15 @@
 ﻿
 @{
-    ViewBag.Title = "Display";
+    ViewBag.Title = "ASP.NET MVC Text Files Lab";
 }
 
-<h2>Display</h2>
+<h2>@ViewBag.title</h2>
 
-<p>Display text file contents</p>
+<p>File contents:</p>
+@foreach (var fileContents in Model)
+{
+    <p>@fileContents</p>
+}
+
+--- <br/>
+@Html.ActionLink("Go back to TextFiles list", "Index", "Files")

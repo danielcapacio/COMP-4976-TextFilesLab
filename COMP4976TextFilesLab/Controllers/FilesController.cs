@@ -23,9 +23,10 @@ namespace COMP4976TextFilesLab.Controllers
             return View(fileNames);
         }
 
-        public ActionResult Display()
+        public ActionResult Display(string id)
         {
-            return View();
+            string[] fileContents = System.IO.File.ReadAllLines(Server.MapPath("~/TextFiles/" + id + ".txt"));
+            return View(fileContents);
         }
     }
 }

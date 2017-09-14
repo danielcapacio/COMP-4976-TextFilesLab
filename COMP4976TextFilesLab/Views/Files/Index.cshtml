@@ -1,7 +1,14 @@
-﻿
+﻿@model string[]
 @{
-    ViewBag.Title = "MVC Text Files Lab";
+    ViewBag.Title = "APS.NET MVC Text Files Lab";
 }
 
 <h2>@ViewBag.Title</h2>
 
+<ul>
+    @foreach (var file in Model)
+    {
+        <li>@Html.ActionLink(file, "Display", new { id = Path.GetFileNameWithoutExtension(file).ToLower() })</li>
+
+    }
+</ul>

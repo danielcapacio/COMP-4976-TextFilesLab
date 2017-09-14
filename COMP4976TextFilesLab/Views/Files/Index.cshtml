@@ -8,7 +8,6 @@
 <ul>
     @foreach (var file in Model)
     {
-        <li>@Html.ActionLink(file, "Display", new { id = Path.GetFileNameWithoutExtension(file).ToLower() })</li>
-
+        <li>@Html.ActionLink(file, "Display", new { id = Path.GetFileNameWithoutExtension(file) })</li>
     }
 </ul>

@@ -5,11 +5,8 @@
 
 <h2>@ViewBag.title</h2>
 
-<p>File contents:</p>
-@foreach (var fileContents in Model)
-{
-    <p>@fileContents</p>
-}
+<p>Contents for @Model[1]:</p>
+<p>@Model[0]</p>
 
 --- <br/>
 @Html.ActionLink("Go back to TextFiles list", "Index", "Files")

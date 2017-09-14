@@ -25,7 +25,14 @@ namespace COMP4976TextFilesLab.Controllers
 
         public ActionResult Display(string id)
         {
-            string[] fileContents = System.IO.File.ReadAllLines(Server.MapPath("~/TextFiles/" + id + ".txt"));
+            List<string> fileContents = new List<string>(); // creating string list to store file contents and file name
+            string[] contents = System.IO.File.ReadAllLines(Server.MapPath("~/TextFiles/" + id + ".txt"));
+            string textFile = id + ".txt";
+            for (int i = 0; i < contents.Length; i++)
+            {
+                fileContents.Add(contents[i]);
+            }
+            fileContents.Add(textFile);
             return View(fileContents);
         }
     }

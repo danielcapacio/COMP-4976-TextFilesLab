@@ -28,11 +28,11 @@ namespace COMP4976TextFilesLab.Controllers
             List<string> fileContents = new List<string>(); // creating string list to store file contents and file name
             string[] contents = System.IO.File.ReadAllLines(Server.MapPath("~/TextFiles/" + id + ".txt"));
             string textFile = id + ".txt";
+            fileContents.Add(textFile);
             for (int i = 0; i < contents.Length; i++)
             {
                 fileContents.Add(contents[i]);
             }
-            fileContents.Add(textFile);
             return View(fileContents);
         }
     }

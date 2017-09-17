@@ -5,8 +5,13 @@
 
 <h2>@ViewBag.title</h2>
 
-<p>Contents for @Model[1]:</p>
-<p>@Model[0]</p>
+<p>Contents for @Model[0]:</p>
+@{ 
+    for (int i = 1; i < Model.Count; i++)
+    {
+        <p>@Model[i]</p>
+    }
+}
 
 --- <br/>
 @Html.ActionLink("Go back to TextFiles list", "Index", "Files")
